@@ -28,6 +28,7 @@ html {
 }
 nav ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 9px;
   margin-left: 275px;
@@ -54,9 +55,9 @@ nav ul li:hover {
 }
 .home::before {
   content: "";
-  background: url("images/background.jpg") center center/120%;
+  background: url("images/background.jpg") center center/cover no-repeat;
   position: absolute;
-  height: 115%;
+  height: 100%;
   width: 100%;
   z-index: -1;
   opacity: 1.9;
@@ -89,12 +90,14 @@ nav ul li:hover {
 }
 .gym-ph {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
 }
 .gym-ph img {
   height: 200px;
-  margin: 100px;
+  /* margin: 100px; */
   width: auto;
   margin-top: 0px;
   margin-bottom: 25px;
@@ -129,7 +132,7 @@ nav ul li:hover {
   padding: 30px;
 }
 #diet {
-  margin: 29px 7px;
+  margin: 29px 0px;
   background-color: rgb(246, 239, 230);
   /* border: 2px solid blue; */
   height: 550px;
@@ -259,5 +262,83 @@ footer{
 #trainer{
   background:url(images/bubble.jpg) center center/cover;
   /* position: absolute; */
+}
+@media screen and (max-width:764px) {
+  .gym-ph{
+    flex-direction: column;
+  }
+}
+@media screen and (max-width:1061px) {
+  html{
+  width: 176vw;
 
+  }
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .head{
+    flex-direction: column;
+    width: 100%;
+  }
+  .ul{
+    text-align: center;
+  }
+  nav ul{
+    margin: auto;
+  }
+  .girl{
+    display: none;
+  }
+  .gym-ph{
+    display: none;
+  }
+  nav ul li a{
+    font-size: 0.6rem;
+    /* color: blue; */
+  }
+  .dietim p{
+    overflow: scroll;
+  }
+  .dietim{
+    height:50vh ;
+    overflow: scroll;
+  }
+  .t1{
+    /* overflow: scroll; */
+    flex-direction: column;
+  }
+  .tim{
+    margin: auto;
+    display: block;
+  }
+  #diet{
+    height: 624px;
+    }
+    .home::before{
+      height:185%;
+      width: 176vw;
+    }
+    .content1{
+      margin: auto;
+    }
+    .content1 h1{
+      font-size: 1.6rem;
+      padding-top: 139px;
+    }
+    .content1 p{
+      margin: 0 30px;
+      text-align: center;
+    }
+    .logo img{
+      height: 32px;
+    }
+    .logo p{
+      text-align: center;
+      margin-left: -20px;
+      font-size: .9rem;
+    }
+    nav ul li{
+      justify-content: space-around;
+    }
 }
